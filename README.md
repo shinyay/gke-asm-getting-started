@@ -96,6 +96,7 @@ $ chmod +x install_asm
 ```
 
 #### 2. Execute the installation script
+Validate environment
 ```
 $ mkdir asm_output
 $ ./install_asm \
@@ -105,6 +106,19 @@ $ ./install_asm \
     --mode install \
     --output_dir asm_output \
     --only_validate
+```
+
+Install ASM
+```
+$ rm -fr asm_output
+$ mkdir asm_output
+$ ./install_asm \
+    --project_id (gcloud config get-value project) \
+    --cluster_name bank-of-anthos \
+    --cluster_location (gcloud config get-value compute/zone) \
+    --mode install \
+    --output_dir asm_output \
+    --enable-all
 ```
 
 ## Demo
