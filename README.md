@@ -349,6 +349,12 @@ $ kubectl label namespace default istio-injection- istio.io/rev=${ASM_REVISION} 
 $ kubectl get ns default --show-labels
 ```
 
+### Deploy Sample Application
+```
+$ kubectl apply -f bank-of-anthos/extras/jwt/jwt-secret.yaml
+$ kubectl apply -f bank-of-anthos/kubernetes-manifests
+```
+
 ## Demo
 
 ## Features
