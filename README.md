@@ -332,6 +332,13 @@ spec:
 $ kubectl apply -f ingress.yaml
 ```
 
+Verify Ingress creation
+```
+$ open https://console.cloud.google.com/kubernetes/ingresses
+```
+![image](https://user-images.githubusercontent.com/3072734/117428960-81d76e80-af61-11eb-87f1-f9714d6019bd.png)
+
+
 ## Demo
 
 ## Features
