@@ -227,6 +227,16 @@ $ kubectl delete -f bank-of-anthos/kubernetes-manifests/
 $ kubectl delete -f bank-of-anthos/extras/jwt/jwt-secret.yaml
 ```
 
+Delete ASM
+```
+$ asm_output/istio-*/bin/istioctl manifest generate --set profile=asm-gcp | kubectl delete --ignore-not-found=true -f -
+$ kubectl delete ns asm-system istio-system
+```
+
+Disable Sidecar Auto Injection
+```
+```
+
 ## Demo
 
 ## Features
