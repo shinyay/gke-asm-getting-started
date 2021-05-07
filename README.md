@@ -86,7 +86,8 @@ $ open http://${EXTERNAL-IP}
 ```
 
 This the application architecgure:
-![architecture](https://user-images.githubusercontent.com/3072734/117389354-31dbb600-af27-11eb-8f7e-c9af28dd63e8.png)
+![image](https://user-images.githubusercontent.com/3072734/117401852-46787800-af40-11eb-87e6-bb42030e0b5e.png)
+
 
 
 ### Anthos Service Mesh Installation
@@ -150,6 +151,10 @@ Verify ASM Installation
 $ open https://console.cloud.google.com/anthos/services
 ```
 
+The following is the architecture which is applied ASM:
+![image](https://user-images.githubusercontent.com/3072734/117401928-6e67db80-af40-11eb-9ac8-76c8d5a3340f.png)
+
+
 ### Istio Ingress-gateway
 Istio Ingress-gateway is already created when ASM is installed.
 
@@ -211,6 +216,9 @@ $ kubectl get services istio-ingressgateway -n istio-system
 ```
 $ open http://${EXTERNAL-IP}
 ```
+The following is the architecture which uses Istio Ingress-gateway:
+![image](https://user-images.githubusercontent.com/3072734/117402115-c272c000-af40-11eb-96b6-0fc40f4eae52.png)
+
 
 ## Demo
 
