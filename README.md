@@ -238,6 +238,34 @@ Disable Sidecar Auto Injection
 $ kubectl label namespace default istio.io/rev-
 ```
 
+Delete output directory
+```
+$ rm -fr asm_output
+```
+
+### 
+#### 1. IstioOperator for Ingress
+The following configuration makes ASM as `ClusterIP`, not `Loadbalancer` which ASM default installation configure as.
+
+- [Reference: From edge to mesh: Exposing service mesh applications through GKE Ingress](https://cloud.google.com/architecture/exposing-service-mesh-apps-through-gke-ingress)
+
+ingressgateway-operator.yaml
+```yaml
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  components:
+    ingressGateways:
+      - name: istio-ingressgateway
+        enabled: true
+        k8s:
+          serviceAnnotations:
+            cloud.google.com/backend-config: '{"default": "ingress-backendconfig"}'
+            cloud.google.com/neg: '{"ingress": true}'
+          service:
+            type: ClusterIP
+```
+
 ## Demo
 
 ## Features
