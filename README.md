@@ -235,6 +235,7 @@ $ kubectl delete ns asm-system istio-system
 
 Disable Sidecar Auto Injection
 ```
+$ kubectl label namespace default istio.io/rev-
 ```
 
 ## Demo
