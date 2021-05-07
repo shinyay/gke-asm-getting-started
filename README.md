@@ -315,6 +315,23 @@ spec:
 $ kubectl apply -f ingress-backendconfig.yaml
 ```
 
+#### 4. Ingress
+ingress.yaml
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gke-ingress
+  namespace: istio-system
+spec:
+  backend:
+    serviceName: istio-ingressgateway
+    servicePort: 80
+```
+```
+$ kubectl apply -f ingress.yaml
+```
+
 ## Demo
 
 ## Features
