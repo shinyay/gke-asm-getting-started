@@ -47,13 +47,11 @@ $ git clone https://github.com/GoogleCloudPlatform/bank-of-anthos.git
 
 Deploy the application
 ```
-$ cd bank-of-anthos
-
 # The demo JWT public key
-$ kubectl apply -f ./extras/jwt/jwt-secret.yaml
+$ kubectl apply -f bank-of-anthos/extras/jwt/jwt-secret.yaml
 
 # The sample app to the cluster
-$ kubectl apply -f ./kubernetes-manifests
+$ kubectl apply -f bank-of-anthos/kubernetes-manifests
 ```
 
 ## Demo
