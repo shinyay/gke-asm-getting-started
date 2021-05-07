@@ -36,6 +36,15 @@ $ gcloud container clusters create bank-of-anthos \
     --release-channel regular
 ```
 
+### 3. Sample Application Deployment
+Deploy the following application:
+- [GoogleCloudPlatform/bank-of-anthos](https://github.com/GoogleCloudPlatform/bank-of-anthos)
+
+Clone the repository
+```
+$ git clone https://github.com/GoogleCloudPlatform/bank-of-anthos.git
+```
+
 ## Demo
 
 ## Features
