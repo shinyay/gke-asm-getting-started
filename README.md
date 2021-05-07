@@ -147,8 +147,19 @@ Verify ASM Installation
 $ open https://console.cloud.google.com/anthos/services
 ```
 
-### Istio ingress-gateway
+### Istio Ingress-gateway
+Istio Ingress-gateway is already created when ASM is installed.
 
+Verify Istio Ingress-gateway
+```
+$ kubectl get service,deploy -n istio-system istio-ingressgateway
+
+NAME                           TYPE           CLUSTER-IP   EXTERNAL-IP     PORT(S)                                                                      AGE
+service/istio-ingressgateway   LoadBalancer   10.40.5.31   34.71.237.224   15021:30874/TCP,80:31897/TCP,443:32254/TCP,15012:31189/TCP,15443:31482/TCP   53m
+
+NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/istio-ingressgateway   2/2     2            2           53m
+```
 
 ## Demo
 
