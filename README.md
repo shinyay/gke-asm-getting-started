@@ -219,6 +219,13 @@ $ open http://${EXTERNAL-IP}
 The following is the architecture which uses Istio Ingress-gateway:
 ![image](https://user-images.githubusercontent.com/3072734/117402115-c272c000-af40-11eb-96b6-0fc40f4eae52.png)
 
+### Clean up
+Delete Sample Application
+```
+$ kubectl delete -f bank-of-anthos/istio-manifests/
+$ kubectl delete -f bank-of-anthos/kubernetes-manifests/
+$ kubectl delete -f bank-of-anthos/extras/jwt/jwt-secret.yaml
+```
 
 ## Demo
 
