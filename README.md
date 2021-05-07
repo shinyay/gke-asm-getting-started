@@ -136,7 +136,7 @@ asm-193-2
 
 Enable Sidecar Auto Injection
 ```
-$ kubectl label namespace default istio.io/rev=${ASM_REVISION} istio-injection- --overwrite
+$ kubectl label namespace default istio-injection- istio.io/rev=${ASM_REVISION} --overwrite
 $ kubectl get ns default --show-labels
 ```
 
@@ -338,6 +338,16 @@ $ open https://console.cloud.google.com/kubernetes/ingresses
 ```
 ![image](https://user-images.githubusercontent.com/3072734/117428960-81d76e80-af61-11eb-87f1-f9714d6019bd.png)
 
+#### 5. Enable Sidecar Auto Injection
+```
+$ kubectl -n istio-system get pods -l app=istiod -ojson | jq -r '.items[0].metadata.labels["istio.io/rev"]'
+
+asm-193-2
+```
+```
+$ kubectl label namespace default istio-injection- istio.io/rev=${ASM_REVISION} --overwrite
+$ kubectl get ns default --show-labels
+```
 
 ## Demo
 
