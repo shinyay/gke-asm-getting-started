@@ -45,6 +45,13 @@ Clone the repository
 $ git clone https://github.com/GoogleCloudPlatform/bank-of-anthos.git
 ```
 
+Deploy the application
+```
+$ cd bank-of-anthos
+$ kubectl apply -f extras/jwt/jwt-secret.yaml
+$ kubectl apply -f kubernetes-manifests
+```
+
 ## Demo
 
 ## Features
