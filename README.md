@@ -6,6 +6,7 @@ This tutorial includes the following contents:
 - GKE Cluster Creation
 - Sample Microservices Deployment
 - Anthos Service Mesh Installation
+- Istio ingress-gateway
 
 
 ## Description
@@ -121,11 +122,7 @@ $ ./install_asm \
     --enable-all
 ```
 
-Verify ASM Installation
-```
-$ open https://console.cloud.google.com/anthos/services
-```
-
+#### 4. Apply ASM to Sample Application
 Get ASM Revision
 ```
 $ kubectl -n istio-system get pods -l app=istiod -ojson | jq -r '.items[0].metadata.labels["istio.io/rev"]'
@@ -144,6 +141,14 @@ Re-Deploy Sample Application
 ```
 $ kubectl rollout restart deployment -n default
 ```
+
+Verify ASM Installation
+```
+$ open https://console.cloud.google.com/anthos/services
+```
+
+### Istio ingress-gateway
+
 
 ## Demo
 
