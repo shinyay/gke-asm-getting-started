@@ -81,6 +81,9 @@ Confirm endpoint as `EXTERNAL-IP`
 ```
 $ kubectl get service frontend
 ```
+```
+$ open http://${EXTERNAL-IP}
+```
 
 This the application architecgure:
 ![architecture](https://user-images.githubusercontent.com/3072734/117389354-31dbb600-af27-11eb-8f7e-c9af28dd63e8.png)
@@ -150,6 +153,8 @@ $ open https://console.cloud.google.com/anthos/services
 ### Istio Ingress-gateway
 Istio Ingress-gateway is already created when ASM is installed.
 
+
+#### 1. Apply Istio Ingress-gateway
 Verify Istio Ingress-gateway
 ```
 $ kubectl get service,deploy -n istio-system istio-ingressgateway
@@ -196,6 +201,15 @@ spec:
 ```
 ```
 $ kubectl apply -f bank-of-anthos/istio-manifests/frontend-ingress.yaml
+```
+
+#### 2. Verify Istio Ingress-gateway
+Confirm endpoint as `EXTERNAL-IP`
+```
+$ kubectl get services istio-ingressgateway -n istio-system
+```
+```
+$ open http://${EXTERNAL-IP}
 ```
 
 ## Demo
