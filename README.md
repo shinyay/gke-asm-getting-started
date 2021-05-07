@@ -376,6 +376,7 @@ $ open http://(kubectl get ing -n istio-system -o json gke-ingress | jq -r '.sta
 ### Clean up
 ```
 $ gcloud container clusters delete bank-of-anthos --quiet
+$ rm -fr asm_output
 ```
 
 ## Demo
