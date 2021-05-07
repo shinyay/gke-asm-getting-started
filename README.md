@@ -350,9 +350,18 @@ $ kubectl get ns default --show-labels
 ```
 
 ### Deploy Sample Application
+#### 1. Deploy bank-of-anthos
 ```
 $ kubectl apply -f bank-of-anthos/extras/jwt/jwt-secret.yaml
 $ kubectl apply -f bank-of-anthos/kubernetes-manifests
+```
+```
+$ kubectl get pods
+```
+
+#### 2. Apply Istio Ingress-gateway
+```
+$ kubectl apply -f bank-of-anthos/istio-manifests/frontend-ingress.yaml
 ```
 
 ## Demo
