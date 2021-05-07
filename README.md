@@ -67,7 +67,7 @@ This the application architecgure:
 
 
 ### Anthos Service Mesh Installation
-#### 1. Retrieve the installation scripts
+#### 1. Retrieve the installation script
 ```
 $ curl https://storage.googleapis.com/csm-artifacts/asm/install_asm_1.9 > install_asm
 $ curl https://storage.googleapis.com/csm-artifacts/asm/install_asm_1.9.sha256 > install_asm.sha256
@@ -76,7 +76,16 @@ install_asm: OK
 $ chmod +x install_asm
 ```
 
+#### 2. Execute the installation script
 ```
+$ mkdir asm_output
+$ ./install_asm \
+    --project_id (gcloud config get-value project) \
+    --cluster_name bank-of-anthos \
+    --cluster_location (gcloud config get-value compute/zone) \
+    --mode install \
+    --output_dir asm_output \
+    --only_validate
 ```
 
 ## Demo
