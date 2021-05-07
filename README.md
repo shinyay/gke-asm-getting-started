@@ -121,6 +121,18 @@ $ ./install_asm \
     --enable-all
 ```
 
+Verify ASM Installation
+```
+$ open https://console.cloud.google.com/anthos/services
+```
+
+Get ASM Revision
+```
+$ kubectl -n istio-system get pods -l app=istiod -ojson | jq -r '.items[0].metadata.labels["istio.io/rev"]'
+
+asm-193-2
+```
+
 ## Demo
 
 ## Features
