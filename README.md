@@ -67,6 +67,17 @@ This the application architecgure:
 
 
 ### Anthos Service Mesh Installation
+#### 1. Retrieve the installation scripts
+```
+$ curl https://storage.googleapis.com/csm-artifacts/asm/install_asm_1.9 > install_asm
+$ curl https://storage.googleapis.com/csm-artifacts/asm/install_asm_1.9.sha256 > install_asm.sha256
+$ shasum -a 256 -c --ignore-missing install_asm.sha256
+install_asm: OK
+$ chmod +x install_asm
+```
+
+```
+```
 
 ## Demo
 
