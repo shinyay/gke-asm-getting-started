@@ -371,6 +371,12 @@ $ kubectl get ingress -n istio-system
 ```
 $ open http://(kubectl get ing -n istio-system -o json gke-ingress | jq -r '.status.loadBalancer.ingress[0].ip')
 ```
+![image](https://user-images.githubusercontent.com/3072734/117432448-59ea0a00-af65-11eb-8058-e66317028091.png)
+
+### Clean up
+```
+$ gcloud container clusters delete bank-of-anthos --quiet
+```
 
 ## Demo
 
