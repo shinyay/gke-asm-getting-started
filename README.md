@@ -5,11 +5,12 @@ You can understand Anthos Service Mesh installation through this tutorial.
 This tutorial includes the following contents:
 - GKE Cluster Creation
 - Sample Microservices Deployment
-- Installation to the Application
+- Anthos Service Mesh Installation
 
 
 ## Description
-### 1. Initial Settings
+### GKE Cluster Creation
+#### 1. Initial Settings
 Configure zone
 ```
 $ gcloud config set compute/zone us-central1-b
@@ -20,7 +21,7 @@ Enable GKE API
 $ gcloud services enable container.googleapis.com
 ```
 
-### 2. GKE Cluster Creation
+### 2. Create GKE Cluster
 Create GKE cluster based on [the Requirements for ASM](https://cloud.google.com/service-mesh/docs/scripted-install/asm-onboarding#requirements):
 - Machine type: At least 4 vCPUs, such as `e2-standard-4`
 - Release channels: `Regular release channel`
@@ -36,10 +37,11 @@ $ gcloud container clusters create bank-of-anthos \
     --release-channel regular
 ```
 
-### 3. Sample Application Deployment
+### Sample Application Deployment
 Deploy the following application:
 - [GoogleCloudPlatform/bank-of-anthos](https://github.com/GoogleCloudPlatform/bank-of-anthos)
 
+#### 1. Deploy Sample Application (Bank of Anthos)
 Clone the repository
 ```
 $ git clone https://github.com/GoogleCloudPlatform/bank-of-anthos.git
@@ -54,6 +56,7 @@ $ kubectl apply -f bank-of-anthos/extras/jwt/jwt-secret.yaml
 $ kubectl apply -f bank-of-anthos/kubernetes-manifests
 ```
 
+#### 2. Verification the app
 Confirm endpoint as `EXTERNAL-IP`
 ```
 $ kubectl get service frontend
@@ -62,6 +65,8 @@ $ kubectl get service frontend
 This the application architecgure:
 ![architecture](https://user-images.githubusercontent.com/3072734/117389354-31dbb600-af27-11eb-8f7e-c9af28dd63e8.png)
 
+
+### Anthos Service Mesh Installation
 
 ## Demo
 
