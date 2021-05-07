@@ -9,6 +9,11 @@ This tutorial includes the following contents:
 
 
 ## Description
+### 1. Initial Settings
+Configure zone
+```
+$ gcloud config set compute/zone us-central1-b
+```
 
 ## Demo
 
