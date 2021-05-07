@@ -133,6 +133,12 @@ $ kubectl -n istio-system get pods -l app=istiod -ojson | jq -r '.items[0].metad
 asm-193-2
 ```
 
+Enable Sidecar Auto Injection
+```
+$ kubectl label namespace default istio.io/rev=${ASM_REVISION} istio-injection- --overwrite
+$ kubectl get ns default --show-labels
+```
+
 ## Demo
 
 ## Features
