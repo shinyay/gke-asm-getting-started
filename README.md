@@ -363,6 +363,14 @@ $ kubectl get pods
 ```
 $ kubectl apply -f bank-of-anthos/istio-manifests/frontend-ingress.yaml
 ```
+```
+$ kubectl get ingress -n istio-system
+```
+
+#### 3. Access Application over Ingress and Istio ingress-gateway
+```
+$ open http://(kubectl get ing -n istio-system -o json gke-ingress | jq -r '.status.loadBalancer.ingress[0].ip')
+```
 
 ## Demo
 
