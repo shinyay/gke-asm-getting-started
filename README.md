@@ -161,6 +161,43 @@ NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/istio-ingressgateway   2/2     2            2           53m
 ```
 
+Apply the following configuration for `Gateway` and `VirtualService`
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: frontend-gateway
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: frontend-ingress
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - frontend-gateway
+  http:
+  - route:
+    - destination:
+        host: frontend
+        port:
+          number: 80
+```
+```
+$ kubectl apply -f bank-of-anthos/istio-manifests/frontend-ingress.yaml
+```
+
 ## Demo
 
 ## Features
