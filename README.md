@@ -2,6 +2,12 @@
 
 You can understand Anthos Service Mesh installation through this tutorial.
 
+This tutorial includes the following contents:
+- GKE Cluster Creation
+- Sample Microservices Deployment
+- Installation to the Application
+
+
 ## Description
 
 ## Demo
