@@ -59,6 +59,10 @@ Confirm endpoint as `EXTERNAL-IP`
 $ kubectl get service frontend
 ```
 
+This the application architecgure:
+![architecture](https://user-images.githubusercontent.com/3072734/117389354-31dbb600-af27-11eb-8f7e-c9af28dd63e8.png)
+
+
 ## Demo
 
 ## Features
