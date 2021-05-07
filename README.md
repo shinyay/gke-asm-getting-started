@@ -243,13 +243,13 @@ Delete output directory
 $ rm -fr asm_output
 ```
 
-### 
+### Ingress for ASM
 #### 1. IstioOperator for Ingress
 The following configuration makes ASM as `ClusterIP`, not `Loadbalancer` which ASM default installation configure as.
 
 - [Reference: From edge to mesh: Exposing service mesh applications through GKE Ingress](https://cloud.google.com/architecture/exposing-service-mesh-apps-through-gke-ingress)
 
-ingressgateway-operator.yaml
+ingress-backendconfig-operator.yaml
 ```yaml
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
@@ -264,6 +264,28 @@ spec:
             cloud.google.com/neg: '{"ingress": true}'
           service:
             type: ClusterIP
+```
+
+#### 2. Execute the installation script
+Install ASM
+```
+$ mkdir asm_output
+$ ./install_asm \
+    --project_id (gcloud config get-value project) \
+    --cluster_name bank-of-anthos \
+    --cluster_location (gcloud config get-value compute/zone) \
+    --mode install \
+    --output_dir asm_output \
+    --enable-all \
+    --custom_overlay (pwd)/ingress-backendconfig-operator.yaml
+```
+
+Ensure that all deployments are up and runnin
+```
+$ kubectl wait --for=condition=available --timeout=600s deployment --all -n istio-system
+
+deployment.apps/istio-ingressgateway condition met
+deployment.apps/istiod-asm-193-2 condition met
 ```
 
 ## Demo
