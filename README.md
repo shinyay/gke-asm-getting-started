@@ -54,6 +54,11 @@ $ kubectl apply -f bank-of-anthos/extras/jwt/jwt-secret.yaml
 $ kubectl apply -f bank-of-anthos/kubernetes-manifests
 ```
 
+Confirm endpoint as `EXTERNAL-IP`
+```
+$ kubectl get service frontend
+```
+
 ## Demo
 
 ## Features
