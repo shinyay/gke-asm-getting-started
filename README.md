@@ -15,6 +15,11 @@ Configure zone
 $ gcloud config set compute/zone us-central1-b
 ```
 
+Enable GKE API
+```
+$ gcloud services enable container.googleapis.com
+```
+
 ## Demo
 
 ## Features
