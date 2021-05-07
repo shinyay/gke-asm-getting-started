@@ -30,7 +30,15 @@ $ gcloud services enable meshconfig.googleapis.com
 $ gcloud services enable meshtelemetry.googleapis.com
 ```
 
-
+KPT Installation
+```
+$ gcloud components install kpt
+```
+or
+```
+$ brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
+$ brew install kpt
+```
 
 ### 2. Create GKE Cluster
 Create GKE cluster based on [the Requirements for ASM](https://cloud.google.com/service-mesh/docs/scripted-install/asm-onboarding#requirements):
