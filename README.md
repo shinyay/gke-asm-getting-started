@@ -21,6 +21,17 @@ Enable GKE API
 $ gcloud services enable container.googleapis.com
 ```
 
+Enable Anthos Service Mesh API
+```
+$ gcloud services enable meshca.googleapis.com
+$ gcloud services enable gkehub.googleapis.com
+$ gcloud services enable gkeconnect.googleapis.com
+$ gcloud services enable meshconfig.googleapis.com
+$ gcloud services enable meshtelemetry.googleapis.com
+```
+
+
+
 ### 2. Create GKE Cluster
 Create GKE cluster based on [the Requirements for ASM](https://cloud.google.com/service-mesh/docs/scripted-install/asm-onboarding#requirements):
 - Machine type: At least 4 vCPUs, such as `e2-standard-4`
