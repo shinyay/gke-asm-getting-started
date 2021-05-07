@@ -20,6 +20,22 @@ Enable GKE API
 $ gcloud services enable container.googleapis.com
 ```
 
+### 2. GKE Cluster Creation
+Create GKE cluster based on [the Requirements for ASM](https://cloud.google.com/service-mesh/docs/scripted-install/asm-onboarding#requirements):
+- Machine type: At least 4 vCPUs, such as `e2-standard-4`
+- Release channels: `Regular release channel`
+
+```
+$ gcloud container clusters create bank-of-anthos \
+    --project (gcloud config get-value project) \
+    --zone (gcloud config get-value compute/zone) \
+    --machine-type=e2-standard-4 \
+    --num-nodes=3 \
+    --subnetwork=default \
+    --enable-ip-alias \
+    --release-channel regular
+```
+
 ## Demo
 
 ## Features
