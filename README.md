@@ -139,6 +139,12 @@ $ kubectl label namespace default istio.io/rev=${ASM_REVISION} istio-injection- 
 $ kubectl get ns default --show-labels
 ```
 
+Re-Deploy Sample Application
+(It makes sidecar proxy installed automatically)
+```
+$ kubectl rollout restart deployment -n default
+```
+
 ## Demo
 
 ## Features
