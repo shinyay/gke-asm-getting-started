@@ -288,6 +288,33 @@ deployment.apps/istio-ingressgateway condition met
 deployment.apps/istiod-asm-193-2 condition met
 ```
 
+#### 3. BackendConfig for Healt Check
+Istio ingress-gateway's Port:
+|Port|Description|
+|----|-----------|
+|80|**HTTP Access** - Protocol: `HTTP`|
+|15021|**Health Check** - Protocol: `HTTP`, RequestPath: `/healthz/ready`|
+
+- [Reference](https://cloud.google.com/architecture/exposing-service-mesh-apps-through-gke-ingress#apply_backend_service_settings)
+
+ingress-backendconfig.yaml
+```yaml
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: ingress-backendconfig
+  namespace: istio-system
+spec:
+  healthCheck:
+    requestPath: /healthz/ready
+    port: 15021
+    type: HTTP
+```
+
+```
+$ kubectl apply -f ingress-backendconfig.yaml
+```
+
 ## Demo
 
 ## Features
