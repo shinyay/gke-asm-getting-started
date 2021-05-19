@@ -101,6 +101,11 @@ $ chmod +x install_asm
 ```
 
 #### 2. Execute the installation script
+Set **mesh ID** using the project number
+```
+$ set -x MESH_ID proj-(gcloud projects list --filter=(gcloud config get-value project) --format="value(PROJECT_NUMBER)")
+```
+
 Validate environment
 ```
 $ mkdir asm_output
