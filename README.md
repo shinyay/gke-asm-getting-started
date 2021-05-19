@@ -50,6 +50,7 @@ $ set -x MESH_ID proj-(gcloud projects list --filter=(gcloud config get-value pr
 Create GKE cluster based on [the Requirements for ASM](https://cloud.google.com/service-mesh/docs/scripted-install/asm-onboarding#requirements):
 - Machine type: At least 4 vCPUs, such as `e2-standard-4`
 - Release channels: `Regular release channel`
+- Workload Identity Enabled
 
 ```
 $ gcloud container clusters create bank-of-anthos \
@@ -61,6 +62,7 @@ $ gcloud container clusters create bank-of-anthos \
     --enable-ip-alias \
     --release-channel regular
     --labels mesh_id=$MESH_ID
+    --workload-pool=(gcloud config get-value project).svc.id.goog
 ```
 
 ### Sample Application Deployment
