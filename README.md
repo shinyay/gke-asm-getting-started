@@ -42,6 +42,11 @@ $ brew install kpt
 ```
 
 ### 2. Create GKE Cluster
+Set **mesh ID** using the project number
+```
+$ set -x MESH_ID proj-(gcloud projects list --filter=(gcloud config get-value project) --format="value(PROJECT_NUMBER)")
+```
+
 Create GKE cluster based on [the Requirements for ASM](https://cloud.google.com/service-mesh/docs/scripted-install/asm-onboarding#requirements):
 - Machine type: At least 4 vCPUs, such as `e2-standard-4`
 - Release channels: `Regular release channel`
@@ -55,6 +60,7 @@ $ gcloud container clusters create bank-of-anthos \
     --subnetwork=default \
     --enable-ip-alias \
     --release-channel regular
+    --labels mesh_id=$MESH_ID
 ```
 
 ### Sample Application Deployment
@@ -101,10 +107,6 @@ $ chmod +x install_asm
 ```
 
 #### 2. Execute the installation script
-Set **mesh ID** using the project number
-```
-$ set -x MESH_ID proj-(gcloud projects list --filter=(gcloud config get-value project) --format="value(PROJECT_NUMBER)")
-```
 
 Validate environment
 ```
