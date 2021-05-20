@@ -24,11 +24,20 @@ $ gcloud services enable container.googleapis.com
 
 Enable Anthos Service Mesh API
 ```
-$ gcloud services enable meshca.googleapis.com
-$ gcloud services enable gkehub.googleapis.com
-$ gcloud services enable gkeconnect.googleapis.com
-$ gcloud services enable meshconfig.googleapis.com
-$ gcloud services enable meshtelemetry.googleapis.com
+$ gcloud services enable \
+    container.googleapis.com \
+    compute.googleapis.com \
+    monitoring.googleapis.com \
+    logging.googleapis.com \
+    cloudtrace.googleapis.com \
+    meshca.googleapis.com \
+    meshtelemetry.googleapis.com \
+    meshconfig.googleapis.com \
+    iamcredentials.googleapis.com \
+    gkeconnect.googleapis.com \
+    gkehub.googleapis.com \
+    cloudresourcemanager.googleapis.com \
+    stackdriver.googleapis.com
 ```
 
 KPT Installation
