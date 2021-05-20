@@ -40,6 +40,23 @@ $ gcloud services enable \
     stackdriver.googleapis.com
 ```
 
+Set the required IAM Roles
+```
+for role in 'roles/servicemanagement.admin' \
+'roles/serviceusage.serviceUsageAdmin' \
+'roles/meshconfig.admin' \
+'roles/compute.admin' \
+'roles/container.admin' \
+'roles/resourcemanager.projectIamAdmin' \
+'roles/iam.serviceAccountAdmin' \
+'roles/iam.serviceAccountKeyAdmin' \
+'roles/gkehub.admin'
+  gcloud projects add-iam-policy-binding (gcloud config get-value project) \
+    --member "user:${YOUR_LOGIN_ACCOUNT}" \
+    --role="$role"
+end
+```
+
 KPT Installation
 ```
 $ gcloud components install kpt
