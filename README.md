@@ -135,6 +135,10 @@ $ chmod +x install_asm
 ```
 
 #### 2. Execute the installation script
+Create istio-system namespace
+```
+$ kubectl create namespace istio-system
+```
 
 Validate environment
 ```
