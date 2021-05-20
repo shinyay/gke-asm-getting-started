@@ -154,8 +154,6 @@ $ ./install_asm \
 
 Install ASM
 ```
-$ rm -fr asm_output
-$ mkdir asm_output
 $ ./install_asm \
     --project_id (gcloud config get-value project) \
     --cluster_name bank-of-anthos \
